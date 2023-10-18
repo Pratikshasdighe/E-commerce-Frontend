@@ -67,12 +67,12 @@ function App() {
       <Header />
       {isAuthectication && <UserOptions user={user} />}
       <Routes>
-        <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/" element={<LoginSignUp />}></Route>
         <Route exact path="/product/:id" element={<ProductDetails />}></Route>
         <Route exact path="/products" element={<Products />}></Route>
         <Route path="/products/:keyword" element={<Products />} />
         <Route exact path="/search" element={<Search />}></Route>
-        <Route exact path="/login" element={<LoginSignUp />}></Route>
+
         <Route exact path="/contact" element={<Contact />} />
 
         <Route exact path="/about" element={<About />} />
