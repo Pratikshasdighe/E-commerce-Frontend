@@ -4,7 +4,7 @@ import Header from "./component/layout/Header/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import webFont from "webfontloader";
 import { Footer } from "./component/layout/Footer/Footer";
-import { Home } from "./component/Home/Home";
+
 import { Search } from "./component/Product/Search";
 import { ProductDetails } from "./component/Product/ProductDetails";
 import { Products } from "./component/Product/Products";
@@ -41,6 +41,7 @@ import ProductReviews from "./component/Admin/ProductReviews";
 import NotFound from "./component/layout/Not Found/NotFound";
 import Contact from "./component/layout/Contact/Contact.js";
 import About from "./component/layout/About/About.js";
+import { BaseUrl } from "./utils/Helper";
 
 function App() {
   const { isAuthectication, user } = useSelector((state) => state.user);
@@ -48,7 +49,7 @@ function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
+    const { data } = await axios.get(`${BaseUrl}/api/v1/stripeapikey`);
     setStripeApiKey(data.stripeApiKey);
   }
 
